@@ -62,7 +62,7 @@ fi
 
 
 # Step 5. 下載靜態檔
-curl -L https://github.com/VagrantPi/BTM-Admin/releases/download/v0.0.6/dist.zip -o dist.zip
+curl -L https://github.com/VagrantPi/BTM-Admin/releases/download/v0.0.7/dist.zip -o dist.zip
 unzip dist.zip
 
 # 替換上 db ENV
