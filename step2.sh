@@ -71,7 +71,7 @@ sed -i "s/DB.PASSWORD=.*/DB.PASSWORD=$PASSWORD/" configs/dev.env
 sed -i "s/DB.DATABASE=.*/DB.DATABASE=$DATABASE/" configs/dev.env
 sed -i "s/DB.HOST=.*/DB.HOST=$POSTGRES_IP/" configs/dev.env
 
-# Step 5. 告誡名單 env
+# Step 6. 告誡名單 env
 read -p "請輸入 告誡名單 使用者帳號: " CIB_ACCOUNT
 CIB_ACCOUNT=$(echo "$CIB_ACCOUNT" | tr -d '[:space:]')
 read -p "請輸入 告誡名單 使用者密碼: " CIB_PWD
@@ -95,7 +95,7 @@ sed -i "/^CIB.ACCOUNT=/s|^CIB.ACCOUNT=.*|CIB.ACCOUNT=$escaped_account|" configs/
 sed -i "/^CIB.PWD=/s|^CIB.PWD=.*|CIB.PWD=$escaped_pwd|" configs/dev.env
 sed -i "/^CIB.ZIP_PWD=/s|^CIB.ZIP_PWD=.*|CIB.ZIP_PWD=$escaped_zip_pwd|" configs/dev.env
 
-# Step 5. 告誡名單 env
+# Step 7. 告誡名單 env
 docker-compose build --no-cache
 docker-compose up -d
 
@@ -104,3 +104,5 @@ sudo ufw allow 8080/tcp
 
 clear
 docker ps
+
+echo "http://$POSTGRES_IP:8080/admin/#/dashboard"
