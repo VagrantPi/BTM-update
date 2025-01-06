@@ -2,11 +2,15 @@
 
 # Step1. get postgres env
 # 提示用戶輸入 PostgreSQL URL
+
+echo "請輸入 伺服器ip:"
+read POSTGRES_IP
 echo "請輸入 PostgreSQL URL:"
 read POSTGRES_URL
 
 # 移除所有空白字元
 POSTGRES_URL=$(echo "$POSTGRES_URL" | tr -d '[:space:]')
+POSTGRES_IP=$(echo "$POSTGRES_IP" | tr -d '[:space:]')
 
 # 使用正則表達式解析 URL
 if [[ $POSTGRES_URL =~ postgres://([^:]+):([^@]+)@[^/]+/(.+)$ ]]; then
@@ -56,10 +60,16 @@ if [ ! -f "configs/dev.env" ]; then
     cp configs/app.env configs/dev.env
 fi
 
+
+# Step 5. 下載靜態檔
+curl -L https://github.com/VagrantPi/BTM-Admin/releases/download/v0.0.6/dist.zip -o dist.zip
+unzip dist.zip
+
 # 替換上 db ENV
 sed -i "s/DB.USERNAME=.*/DB.USERNAME=$USERNAME/" configs/dev.env
 sed -i "s/DB.PASSWORD=.*/DB.PASSWORD=$PASSWORD/" configs/dev.env
 sed -i "s/DB.DATABASE=.*/DB.DATABASE=$DATABASE/" configs/dev.env
+sed -i "s/DB.HOST=.*/DB.HOST=$POSTGRES_IP/" configs/dev.env
 
 # Step 5. 告誡名單 env
 read -p "請輸入 告誡名單 使用者帳號: " CIB_ACCOUNT
@@ -86,7 +96,7 @@ sed -i "/^CIB.PWD=/s|^CIB.PWD=.*|CIB.PWD=$escaped_pwd|" configs/dev.env
 sed -i "/^CIB.ZIP_PWD=/s|^CIB.ZIP_PWD=.*|CIB.ZIP_PWD=$escaped_zip_pwd|" configs/dev.env
 
 # Step 5. 告誡名單 env
-docker-compose build
+docker-compose build --no-cache
 docker-compose up -d
 
 # 防火牆
