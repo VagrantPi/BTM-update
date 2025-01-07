@@ -4,13 +4,16 @@
 # 提示用戶輸入 PostgreSQL URL
 
 echo "請輸入 伺服器ip:"
-read POSTGRES_IP
+read IP
 echo "請輸入 PostgreSQL URL:"
 read POSTGRES_URL
 
+# 取得內網 ip
+eth0_secondary_ip=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | sed -n '2p')
+
 # 移除所有空白字元
 POSTGRES_URL=$(echo "$POSTGRES_URL" | tr -d '[:space:]')
-POSTGRES_IP=$(echo "$POSTGRES_IP" | tr -d '[:space:]')
+IP=$(echo "$IP" | tr -d '[:space:]')
 
 # 使用正則表達式解析 URL
 if [[ $POSTGRES_URL =~ postgres://([^:]+):([^@]+)@[^/]+/(.+)$ ]]; then
@@ -69,7 +72,7 @@ unzip dist.zip
 sed -i "s/DB.USERNAME=.*/DB.USERNAME=$USERNAME/" configs/dev.env
 sed -i "s/DB.PASSWORD=.*/DB.PASSWORD=$PASSWORD/" configs/dev.env
 sed -i "s/DB.DATABASE=.*/DB.DATABASE=$DATABASE/" configs/dev.env
-sed -i "s/DB.HOST=.*/DB.HOST=$POSTGRES_IP/" configs/dev.env
+sed -i "s/DB.HOST=.*/DB.HOST=$eth0_secondary_ip/" configs/dev.env
 
 # Step 6. 告誡名單 env
 read -p "請輸入 告誡名單 使用者帳號: " CIB_ACCOUNT
@@ -99,10 +102,17 @@ sed -i "/^CIB.ZIP_PWD=/s|^CIB.ZIP_PWD=.*|CIB.ZIP_PWD=$escaped_zip_pwd|" configs/
 docker-compose build --no-cache
 docker-compose up -d
 
+# Step 8. 更新 postgres 設定
+echo "listen_addresses = '*'" | sudo tee -a /etc/postgresql/12/main/postgresql.conf > /dev/null
+eth0_network_prefix=$(echo "$eth0_secondary_ip" | awk -F. '{print $1"."$2".0.0"}')
+echo "host all all $eth0_network_prefix/16 md5" | sudo tee -a /etc/postgresql/12/main/pg_hba.conf > /dev/null
+sudo service postgresql restart
+
+
 # 防火牆
 sudo ufw allow 8080/tcp
 
 clear
 docker ps
 
-echo "http://$POSTGRES_IP:8080/admin/#/dashboard"
+echo "http://$IP:8080/admin/#/dashboard"
