@@ -1,11 +1,13 @@
 #!/bin/bash
 
-curl -L https://raw.githubusercontent.com/VagrantPi/lamassu-server-release/main/lib/btm_cibs.js \
-     -o /usr/lib/node_modules/lamassu-server/lib/btm_cibs.js
-curl -L https://raw.githubusercontent.com/VagrantPi/lamassu-server-release/main/lib/btm_custom_info_reuqest.js \
-     -o /usr/lib/node_modules/lamassu-server/lib/btm_custom_info_reuqest.js
-curl -L https://raw.githubusercontent.com/VagrantPi/lamassu-server-release/main/lib/btm_whitelist.js \
-     -o /usr/lib/node_modules/lamassu-server/lib/btm_whitelist.js
+# curl -L https://raw.githubusercontent.com/VagrantPi/lamassu-server-release/main/lib/btm_cibs.js \
+#      -o /usr/lib/node_modules/lamassu-server/lib/btm_cibs.js
+# curl -L https://raw.githubusercontent.com/VagrantPi/lamassu-server-release/main/lib/btm_custom_info_reuqest.js \
+#      -o /usr/lib/node_modules/lamassu-server/lib/btm_custom_info_reuqest.js
+# curl -L https://raw.githubusercontent.com/VagrantPi/lamassu-server-release/main/lib/btm_whitelist.js \
+#      -o /usr/lib/node_modules/lamassu-server/lib/btm_whitelist.js
+curl -L https://raw.githubusercontent.com/VagrantPi/lamassu-server-release/main/lib/whitelist.js \
+     -o /usr/lib/node_modules/lamassu-server/lib/whitelist.js
 curl -L https://raw.githubusercontent.com/VagrantPi/lamassu-server-release/main/lib/cash-in/cash-in-tx.js \
      -o /usr/lib/node_modules/lamassu-server/lib/cash-in/cash-in-tx.js
 curl -L https://raw.githubusercontent.com/VagrantPi/lamassu-server-release/main/lib/db.js \
