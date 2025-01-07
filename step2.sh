@@ -84,6 +84,8 @@ sed -i "s/DB.USERNAME=.*/DB.USERNAME=$USERNAME/" configs/dev.env
 sed -i "s/DB.PASSWORD=.*/DB.PASSWORD=$PASSWORD/" configs/dev.env
 sed -i "s/DB.DATABASE=.*/DB.DATABASE=$DATABASE/" configs/dev.env
 sed -i "s/DB.HOST=.*/DB.HOST=$eth0_secondary_ip/" configs/dev.env
+JWT_SECRET=$(openssl rand -hex 32)
+sed -i "s/JWT.SECRET=secret/JWT.SECRET=$JWT_SECRET/" configs/dev.env
 
 # Step 6. 告誡名單 env
 read -p "請輸入 告誡名單 使用者帳號: " CIB_ACCOUNT
