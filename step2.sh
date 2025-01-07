@@ -50,7 +50,7 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update -y
 # install
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin unzip docker-compose -y
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin unzip jq docker-compose -y
 
 
 # Step 4. clone project
@@ -118,6 +118,7 @@ echo "listen_addresses = '*'" | sudo tee -a /etc/postgresql/12/main/postgresql.c
 eth0_network_prefix=$(echo "$eth0_secondary_ip" | awk -F. '{print $1"."$2".0.0"}')
 echo "host all all $eth0_network_prefix/16 md5" | sudo tee -a /etc/postgresql/12/main/pg_hba.conf > /dev/null
 sudo service postgresql restart
+sudo ufw allow 5432/tcp
 
 
 # 防火牆
