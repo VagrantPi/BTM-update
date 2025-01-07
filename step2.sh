@@ -65,7 +65,18 @@ fi
 
 
 # Step 5. 下載靜態檔
-curl -L https://github.com/VagrantPi/BTM-Admin/releases/download/v0.0.7/dist.zip -o dist.zip
+# 取得最新的 Release Tag
+LATEST_TAG=$(curl -s https://api.github.com/repos/VagrantPi/BTM-Admin/releases/latest | jq -r '.tag_name')
+
+# 檢查是否成功取得標籤
+if [ "$LATEST_TAG" == "null" ] || [ -z "$LATEST_TAG" ]; then
+    echo "無法取得最新標籤。請檢查 repository 是否正確。"
+    exit 1
+fi
+# 下載最新版本的 Release
+curl -L https://github.com/VagrantPi/BTM-Admin/releases/download/$LATEST_TAG/dist.zip -o dist.zip
+
+# 解壓縮檔案
 unzip dist.zip
 
 # 替換上 db ENV
