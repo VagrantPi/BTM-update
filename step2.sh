@@ -113,7 +113,6 @@ sed -i "/^CIB.ZIP_PWD=/s|^CIB.ZIP_PWD=.*|CIB.ZIP_PWD=$escaped_zip_pwd|" configs/
 
 # Step 7. 告誡名單 env
 docker-compose build --no-cache
-docker-compose up -d
 
 # Step 8. 更新 postgres 設定
 echo "listen_addresses = '*'" | sudo tee -a /etc/postgresql/12/main/postgresql.conf > /dev/null
@@ -126,7 +125,9 @@ sudo ufw allow 5432/tcp
 # 防火牆
 sudo ufw allow 8080/tcp
 
-clear
+sleep 3
+
+docker-compose up -d
 docker ps
 
 echo "http://$IP:8080/admin/#/dashboard"
