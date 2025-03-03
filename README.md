@@ -5,7 +5,7 @@
 ### step1
 
 ```bash
-curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step1.sh && bash step1-1.sh
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step1-1.sh && bash step1-1.sh
 ```
 
 執行完後等待一段時間會看到 PSQL_URL
@@ -17,10 +17,13 @@ curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/s
 執行並貼上剛剛複製的
 
 ```bash
-curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step2.sh && bash step1-2.sh
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step1-2.sh && bash step1-2.sh
 ```
 
 ## 告誡名單版本 2025/2/27
 
+```bash
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step2-1.sh && bash step2-1.sh
+```
 
 
