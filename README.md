@@ -22,8 +22,15 @@ curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/s
 
 ## 告誡名單版本 2025/2/27
 
+### step1
+
 ```bash
 curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step2-1.sh && bash step2-1.sh
 ```
 
+### step2
+
+```bash
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step2-2.sh && bash step2-2.sh
+```
 

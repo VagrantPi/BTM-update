@@ -25,16 +25,10 @@ echo "BTM_API_KEY=$SERVER_KEY" >> /usr/lib/node_modules/lamassu-server/.env
 
 # 重啟後台
 cd BTM-backend
+git checkout
+git checkout main
 git pull
 docker-compose build
 docker-compose down
 docker-compose up -d
 
-# pull lamassu-server code
-cd /usr/lib/node_modules/lamassu-server
-git pull
-
-# 重啟 lamassu-server
-supervisorctl restart lamassu-admin-server lamassu-server
-
-cd ~
