@@ -34,3 +34,10 @@ curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/s
 curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step2-2.sh && bash step2-2.sh
 ```
 
+## 綠界發票版本 2025/3/18
+
+### step1
+
+```bash
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3.sh && bash step3.sh
+```
