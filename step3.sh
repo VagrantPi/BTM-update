@@ -27,6 +27,7 @@ docker-compose up -d
 
 
 # 設定 lamassu-server
+mkdir -p /usr/lib/node_modules/lamassu-server/btm-tools
 curl -L https://raw.githubusercontent.com/VagrantPi/lamassu-server-release/main/btm-tools/ecpay.js \
      -o /usr/lib/node_modules/lamassu-server/btm-tools/ecpay.js
 curl -L https://raw.githubusercontent.com/VagrantPi/lamassu-server-release/main/lib/btm-invoice.js \
