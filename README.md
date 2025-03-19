@@ -36,8 +36,14 @@ curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/s
 
 ## 綠界發票版本 2025/3/18
 
-### step1
+### 更新綠界發票版本
 
 ```bash
-curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3.sh && bash step3.sh
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3-1.sh && bash step3-1.sh
+```
+
+### 塞 log
+
+```bash
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3-2.sh && bash step3-2.sh
 ```
