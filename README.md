@@ -42,14 +42,8 @@ curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/s
 curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3-1.sh && bash step3-1.sh
 ```
 
-### 塞 log 1
+### 更新發票版本
 
 ```bash
-curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3-2.sh && bash step3-2.sh
-```
-
-### 塞 log 2
-
-```bash
-curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3-3.sh && bash step3-3.sh
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3-4.sh && bash step3-4.sh
 ```
