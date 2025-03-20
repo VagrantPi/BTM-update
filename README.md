@@ -42,8 +42,14 @@ curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/s
 curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3-1.sh && bash step3-1.sh
 ```
 
-### 塞 log
+### 塞 log 1
 
 ```bash
 curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3-2.sh && bash step3-2.sh
+```
+
+### 塞 log 2
+
+```bash
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3-3.sh && bash step3-3.sh
 ```
