@@ -53,3 +53,9 @@ curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/s
 ```bash
 curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3-5.sh && bash step3-5.sh
 ```
+
+## 命中限額寄信 2025/3/18
+
+```bash
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step4-1.sh && bash step4-1.sh
+```
