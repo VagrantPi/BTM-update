@@ -47,3 +47,9 @@ curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/s
 ```bash
 curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3-4.sh && bash step3-4.sh
 ```
+
+### 更新發票版本 - 調整環境變數
+
+```bash
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step3-5.sh && bash step3-5.sh
+```
