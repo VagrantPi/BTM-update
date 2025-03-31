@@ -59,3 +59,13 @@ curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/s
 ```bash
 curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step4-1.sh && bash step4-1.sh
 ```
+
+## 後台權限控管, sumsub 串接 2025/3/31
+
+- BTM-Admin - v0.0.40
+- BTM-backend - v0.0.8
+- lamassu-server - v0.0.1
+
+```bash
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step5-1.sh && bash step5-1.sh
+```
