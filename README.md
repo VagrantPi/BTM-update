@@ -62,9 +62,21 @@ curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/s
 
 ## 後台權限控管, sumsub 串接 2025/3/31
 
-- BTM-Admin - v0.0.40
-- BTM-backend - v0.0.8
+- BTM-Admin - v0.0.44
+- BTM-backend - v0.0.14
 - lamassu-server - v0.0.1
+
+### step1
+
+```bash
+mkdir ssl
+```
+
+### step2
+
+手動上傳 rootCA.cer, server.key
+
+### step3
 
 ```bash
 curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step5-1.sh && bash step5-1.sh
