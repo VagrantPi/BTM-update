@@ -17,7 +17,7 @@ echo "SENSITIVE_DATA_ENCRYPT_KEY=$SENSITIVE_DATA_ENCRYPT_KEY" >> BTM-backend/con
 
 
 cd BTM-backend
-curl -L https://github.com/VagrantPi/BTM-Admin/releases/download/v0.0.43/dist.zip -o dist.zip
+curl -L https://github.com/VagrantPi/BTM-Admin/releases/download/v0.0.44/dist.zip -o dist.zip
 unzip dist.zip
 rm dist.zip
 cp ../ssl/* docker/ssl/
