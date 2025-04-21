@@ -1,11 +1,43 @@
 # BTM-update
 
+## 限額、EDD 功能 2025/4/16
+
+- BTM-Admin - v0.0.49
+- BTM-backend - v0.0.19
+- lamassu-server - v0.0.3
+
+```bash
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step6-1.sh && bash step6-1.sh
+```
+
+先檢查是否有重複
+
+```
+SELECT *
+FROM btm_invoices
+WHERE tx_id IN (
+    SELECT tx_id
+    FROM btm_invoices
+    GROUP BY tx_id
+    HAVING COUNT(*) > 1
+)
+ORDER BY tx_id;
+
+```
+
+手動下 SQL
+
+```
+DROP INDEX "public"."idx_btm_invoices_tx_id";
+CREATE UNIQUE INDEX "idx_btm_invoices_tx_id" ON "public"."btm_invoices" USING BTREE ("tx_id");
+```
+
 
 ## hotfix 後台權限控管, sumsub 串接 2025/4/8
 
-- BTM-Admin - v0.0.45
-- BTM-backend - v0.0.15
-- lamassu-server - v0.0.1
+- BTM-Admin - v0.0.48
+- BTM-backend - v0.0.17
+- lamassu-server - v0.0.2
 
 ```bash
 curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step5-2.sh && bash step5-2.sh
