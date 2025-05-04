@@ -1,5 +1,15 @@
 # BTM-update
 
+## 添加 log，添加後台 log 2025/5/4
+
+- BTM-Admin - v0.0.51
+- BTM-backend - v0.0.21
+- lamassu-server - v0.0.5
+
+```bash
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step7-1.sh && bash step7-1.sh
+```
+
 ## 限額、EDD 功能 2025/4/16
 
 - BTM-Admin - v0.0.49
