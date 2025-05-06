@@ -10,6 +10,14 @@
 curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step7-1.sh && bash step7-1.sh
 ```
 
+### hotfix 有 runtine error 變數沒宣告引用問題，順便處理特殊 case。當用戶 EDD 卻手動在 lamassu 後台解除 block，則該用戶還是需為黑名單被阻擋購買
+
+- lamassu-server - v0.0.6
+
+```bash
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step7-2.sh && bash step7-2.sh
+```
+
 ## 限額、EDD 功能 2025/4/16
 
 - BTM-Admin - v0.0.49
