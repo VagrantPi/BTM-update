@@ -1,6 +1,17 @@
 #!/bin/bash
 
 
+echo "請輸入 SMS Username:"
+read SMS_USERNAME
+echo "請輸入 SMS Password:"
+read SMS_PASSWORD
+
+
+echo "" >> BTM-backend/configs/dev.env
+echo "#[TWILIO]" >> BTM-backend/configs/dev.env
+echo "WILIO.USERNAME=$SMS_USERNAME" >> BTM-backend/configs/dev.env
+echo "TWILIO.PASSWORD=$SMS_PASSWORD" >> BTM-backend/configs/dev.env
+
 # lamassu-server 拉新程式碼
 curl -L https://raw.githubusercontent.com/VagrantPi/lamassu-server-release/refs/heads/main/lib/notifier/index.js \
      -o /usr/lib/node_modules/lamassu-server/lib/notifier/index.js
