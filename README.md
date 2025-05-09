@@ -1,5 +1,15 @@
 # BTM-update
 
+## log 錯誤、修正發票寫入錯誤、修正 edd 起始時間計算錯誤 2025/5/9
+
+- BTM-Admin - v0.0.52
+- BTM-backend - v0.0.22
+- lamassu-server - v0.0.7
+
+```bash
+curl -O https://raw.githubusercontent.com/VagrantPi/BTM-update/refs/heads/main/step7-4.sh && bash step7-4.sh
+```
+
 ## 新增後台 RD 工具頁 2025/5/9
 
 - BTM-Admin - v0.0.52
